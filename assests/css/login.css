@@ -1,0 +1,313 @@
+/* BASIC */
+
+html {
+    background-color: #56baed;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+}
+
+a {
+    color: #92badd;
+    display: inline-block;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+h2 {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    margin: 40px 8px 10px 8px;
+    color: #cccccc;
+}
+
+h4{
+    text-align: center;
+    display: inline-block;
+    margin: 40px 8px 10px 8px;
+}
+
+/* STRUCTURE */
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+.wrapper1 {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    min-height: 100%;
+    padding: 20px;
+}
+#formContent {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+ 
+#formFooter {
+    background-color: #f6f6f6;
+    border-top: 1px solid #dce8f1;
+    padding: 25px;
+    text-align: center;
+    -webkit-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+}
+
+#formFooter .underlineHover{
+    color:green;
+   margin-right: 10px;
+}
+#formContent1 {
+    -webkit-border-radius: 10px 10px 10px 10px;
+    border-radius: 10px 10px 10px 10px;
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 650px;
+    position: relative;
+    padding: 0px;
+    -webkit-box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+    text-align: center;
+}
+ 
+ 
+ 
+/* TABS */
+
+h2.inactive {
+    color: #cccccc;
+}
+
+h2.active {
+    color: #0d0d0d;
+    border-bottom: 2px solid #5fbae9;
+}
+
+ 
+
+/* FORM TYPOGRAPHY*/
+
+div.loginButton{
+    width: 100%;
+    padding: 5px 20px 40px 20px;
+    text-align: center;
+}
+
+input[type=button],
+input[type=submit],
+input[type=reset] {
+   background-color: green;
+    border: none;
+    color: white;
+    padding: 18px 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 13px;
+    -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+    /* margin: 5px 20px 40px 20px; */
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+}
+
+ 
+ 
+
+input[type=text], input[type=password], input[type=email] {
+    background-color: #f6f6f6;
+    border: none;
+   
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 5px;
+    width: 85%;
+    border: 2px solid #f6f6f6;
+    -webkit-transition: all 0.5s ease-in-out;
+    -moz-transition: all 0.5s ease-in-out;
+    -ms-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
+    -webkit-border-radius: 5px 5px 5px 5px;
+    border-radius: 5px 5px 5px 5px;
+}
+
+ 
+
+
+input[type=text]:focus, input[type=password]:focus, input[type=email]:focus {
+    background-color: #fff;
+    border-bottom: 2px solid green;
+}
+
+input[type=text]:placeholder, input[type=password]:placeholder, input[type=email]:placeholder {
+    color: green;
+}
+
+
+
+/* ANIMATIONS */
+
+/* Simple CSS3 Fade-in-down Animation */
+
+
+
+/* Simple CSS3 Fade-in Animation */
+.underlineHover:after {
+    display: block;
+    left: 0;
+    bottom: -10px;
+    width: 0;
+    height: 2px;
+    background-color: green;
+    content: "";
+    transition: width 0.2s;
+}
+
+.underlineHover:hover {
+    color: black;
+}
+
+.underlineHover:hover:after {
+    width: 100%;
+}
+
+button{
+        outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+/* OTHERS */
+
+*:focus {
+    outline: none;
+}
+
+#icon {
+    width: 35%;
+}
+
+#main-container{
+    
+    width: 650px;
+   
+}
+
+table{
+    background-color: white;
+    text-align: left;
+    border-collapse: collapse;
+    width: 100%;
+    
+
+
+}
+
+th, td{
+    padding: 20px;
+    text-align: center;
+}
+
+thead{
+    background-color: green;
+    border-bottom: solid 5px white;
+    color: white;
+
+  
+}
+
+thead tr tr {
+    background-color: #246355;
+    border-bottom: solid 5px white;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+
+}
+thead tr {
+
+}
+tr td{
+ text-align: center;
+}
+tr tr:nth-child(even){
+    background-color: #ddd;
+}
+
+tr:hover td{
+    background-color: green;
+    color: white;
+}
+
+
+thead tr #user{
+  
+ position: absolute;
+ left: 270px;
+ top: -15px;
+ font-size: 25px;
+ 
+}
+
+@media screen and (max-width: 1000px){
+
+table{
+position: absolute;
+ 
+text-align: center;
+align-items: center;
+
+}
+th, td{
+    padding: 20px;
+    text-align: center;
+}
+
+thead tr #user{
+  display: flex;
+ text-align: center;
+ justify-content: center;
+ align-items: center;
+ position: absolute;
+ left: 150px;
+ margin: auto;
+}
+
+}

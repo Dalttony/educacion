@@ -1,0 +1,20 @@
+.acerca-de .info-container .icon{
+display: flex;
+justify-content: center;
+align-items: center;
+align-items: center;
+ margin: auto;
+ animation-name: animar;
+ animation-duration: 4s;
+ animation-delay: 2s;
+ animation-iteration-count: infinite;
+ position: relative;
+
+
+}
+
+@keyframes animar{
+
+	0%{left: 0px;top: 0px;}
+	100%{top:20px; bottom: 20px;}
+}
