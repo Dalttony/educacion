@@ -26,7 +26,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--===============================================================================================-->	
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>assests/vendor/daterangepicker/daterangepicker.css">
 <!--===============================================================================================-->
- <script type="text/javascript" src="<?php base_url(); ?>assests/js/login/usuario.js"></script>
+ 
 </head>
 
 <body>
@@ -85,7 +85,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 <!--===============================================================================================-->
 	<script src="<?php echo base_url();?>assests/vendor/countdowntime/countdowntime.js"></script>
 <!--===============================================================================================-->
-     
+<script type="text/javascript" src="<?php base_url(); ?>assests/js/login/usuario.js"></script>
 </body>
 
 </html>

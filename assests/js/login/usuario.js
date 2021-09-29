@@ -13,14 +13,12 @@ function VerificarUsuario(){
             pass:con
         }
     }).done(function(resp){
-        console.log(resp);
-        if(resp==0){
+        resp = JSON.parse(resp);
+        if(resp.error){
             Swal.fire("Mensaje De Error",'Usuario y/o contrase\u00f1a incorrecta',"error");
-           
         }else{
-            var data= JSON.parse(resp);
-            if(data[0][5]==='INACTIVO'){
-                return Swal.fire("Mensaje De Advertencia","Lo sentimos el usuario "+usu+" se encuentra suspendido, comuniquese con el administrador","warning");
+            if(resp.status ==='INACTIVO'){
+                return Swal.fire("Mensaje De Advertencia","Lo sentimos el usuario "+resp.nombre+" se encuentra suspendido, comuniquese con el administrador","warning");
             }
             $.ajax({
                 url:'../controlador/usuario/controlador_crear_session.php',
@@ -37,16 +35,13 @@ function VerificarUsuario(){
                     curso:data[0][11],
                     punto_ex:data[0][12],
                     punto_sem:data[0][13],
-                    nivel:data[0][14]
-
-                    
-                      
+                    nivel:data[0][14]  
                 }
             }).done(function(resp){
                 let timerInterval
                 Swal.fire({
                 title: 'BIENVENIDO AL SISTEMA',
-                html: 'Usted sera redireccionado en <b></b> milisegundos.',
+                html: 'Usted sera redireccionado en <b></b> segundos.',
                 timer: 2000,
                 timerProgressBar: true,
                 onBeforeOpen: () => {

@@ -7,6 +7,7 @@ class Solicitar_user extends CI_Controller {
 		parent::__construct();
 		
 	}
+	
 	function index()
 	{
 

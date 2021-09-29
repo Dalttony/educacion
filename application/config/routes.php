@@ -61,4 +61,4 @@ $route['admin'] = 'Administracion';
 $route['lista_usuario'] = 'Listar_usuario';
 $route['lista_estudiente'] = 'Listar_estudiantes';
 $route['lista_reanking'] = 'Listar_reanking';
-
+$route['dashboard'] = 'Dashboard';
