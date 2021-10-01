@@ -5,7 +5,8 @@ class Login extends CI_Controller {
 
 	function __construct(){
 		parent::__construct();
-		$this->load->model("Usuario_model");
+		$this->load->model("Administracion_model");
+		$this->load->library('session');
 	}
 	function index()
 	{
@@ -14,7 +15,7 @@ class Login extends CI_Controller {
 	}
 
 	public function verificar_usuario(){
-		$data = $this->Usuario_model->verificar_usuario(
+		$data = $this->Administracion_model->verificar_usuario(
 			$this->input->post('user'), 
 			$this->input->post('pass')
 		);
@@ -24,6 +25,7 @@ class Login extends CI_Controller {
 				'status' => $data->usu_status,
 				'nombre' => $data->nombre
 			));
+			$this->session->set_userdata('user_session', $data->usu_id);
 		}else{
 			echo json_encode(array("error" => true));
 		}

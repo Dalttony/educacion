@@ -14,31 +14,14 @@ function VerificarUsuario(){
         }
     }).done(function(resp){
         resp = JSON.parse(resp);
+        
         if(resp.error){
             Swal.fire("Mensaje De Error",'Usuario y/o contrase\u00f1a incorrecta',"error");
         }else{
-            if(resp.status ==='INACTIVO'){
+            if(!resp.status){
                 return Swal.fire("Mensaje De Advertencia","Lo sentimos el usuario "+resp.nombre+" se encuentra suspendido, comuniquese con el administrador","warning");
             }
-            $.ajax({
-                url:'../controlador/usuario/controlador_crear_session.php',
-                type:'POST',
-                data:{
-                    idusuario: data[0][0],
-                    user: data[0][1],
-                    sexo: data[0][3],
-                    email:data[0][6],
-                    rol:data[0][7],
-                    nombre:data[0][8],
-                    cedula:data[0][9],
-                    institucion:data[0][10],
-                    curso:data[0][11],
-                    punto_ex:data[0][12],
-                    punto_sem:data[0][13],
-                    nivel:data[0][14]  
-                }
-            }).done(function(resp){
-                let timerInterval
+             let timerInterval
                 Swal.fire({
                 title: 'BIENVENIDO AL SISTEMA',
                 html: 'Usted sera redireccionado en <b></b> segundos.',
@@ -60,19 +43,16 @@ function VerificarUsuario(){
                     clearInterval(timerInterval)
                 }
                 }).then((result) => {
-                /* Read more about handling dismissals below */
-                if (result.dismiss === Swal.DismissReason.timer) {
-                    location.reload();
-                }
-})
-            })
-           
+                    window.location = base_url+'panel';
+                });
         }
     })
 }
  
 var table;
 function listar_usuario(){
+    let base_url = $("#base_url").val();
+      
     table = $("#tabla_usuario").DataTable({
        "ordering":false,   
        "bLengthChange":false,
@@ -83,13 +63,13 @@ function listar_usuario(){
        "async": false ,
        "processing": true,
        "ajax":{
-           "url":"../controlador/usuario/controlador_usuario_listar.php",
+           url: base_url+'lista_usuario_datos', // "../controlador/usuario/controlador_usuario_listar.php",
            type:'POST'
        },
        "columns":[
            {"data":"posicion"},
            {"data":"usu_nombre"},
-            {"data":"rol_nombre"}, 
+           {"data":"rol_nombre"}, 
            {"data":"usu_sexo",
                 render: function (data, type, row ) {
                     if(data=='M'){
@@ -104,7 +84,8 @@ function listar_usuario(){
            {"data":"usu_status",
              
              render: function (data, type, row ) {
-               if(data=='ACTIVO'){
+                 console.log(data);
+               if(data="ACTIVO"){
                    return "<span class='label label-success'>"+data+"</span>";                   
                }else{
                  return "<span class='label label-danger'>"+data+"</span>";                 

@@ -57,6 +57,7 @@
 <div class="wrapper">
 
   <header class="main-header">
+    <input type="hidden" id="base_url" value="<?php echo base_url(); ?>" />
     <!-- Logo -->
     <a href="<?php base_url();?>Administracion" class="logo">
       <!-- mini logo for sidebar mini 50x50 pixels -->
@@ -83,13 +84,13 @@
           <!-- User Account: style can be found in dropdown.less -->
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-              <img  id="img_nav" class="user-image" alt="User Image">
-              <span class="hidden-xs">admin</span>
+              <img  id="img_nav" class="user-image" alt="Imagen de administrador" src="<?php echo base_url().'assests/Plantilla/dist/img/avatar04.png'; ?>">
+              <span class="hidden-xs"><?php echo @$admin->usu_nombre_completo; ?></span>
             </a>
             <ul class="dropdown-menu">
               <!-- User image -->
               <li class="user-header">
-                <img id="img_subnav"  class="img-circle" alt="User Image">
+                <img id="img_subnav"  class="img-circle" alt="Imagen Usuario" src="<?php echo base_url().'assests/Plantilla/dist/img/avatar04.png'; ?>">
 
                 <p>
                   <h2>administrador</h2>
@@ -125,7 +126,7 @@
   <aside class="main-sidebar">
     <!-- sidebar: style can be found in sidebar.less -->
     <section class="sidebar">
-      <!-- Sidebar user panel -->
+      <!-- Sidebar user panel 
       <div class="user-panel">
         <div class="pull-left image">
           <img id="img_lateral" class="img-circle" alt="User Image">
@@ -134,7 +135,7 @@
           <p>Administrador</p>
           <a href="#"><i class="fa fa-circle text-success"></i>admin</a>
         </div>
-      </div>
+      </div>-->
       <!-- search form -->
       <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
@@ -148,7 +149,7 @@
       <!-- /.search form -->
       <!-- sidebar menu: : style can be found in sidebar.less -->
       <ul class="sidebar-menu" data-widget="tree">
-        <li class="header">MAIN NAVIGATION</li>
+        <li class="header">Navegación principal</li>
         <li class="active treeview">
           <a onclick="cargar_contenido('contenido_principal','<?php base_url();?>Listar_usuario')">
             <i class="fa fa-user"></i> <span style="cursor: pointer;">Usuario</span>
@@ -174,6 +175,27 @@
           </a>
         </li>
       
+      </ul>
+
+
+      <ul class="sidebar-menu" data-widget="tree">
+        <li class="header">Administración del juego</li>
+        <li class="active treeview">
+          <a onclick="cargar_contenido('contenido_principal','<?php base_url();?>Listar_usuario')">
+            <i class="fa fa-user"></i> <span style="cursor: pointer;">Desafios</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right" style="cursor: pointer;"></i>
+            </span>
+
+          </a>
+             <a onclick="cargar_contenido('contenido_principal','<?php base_url();?>Listar_estudiantes')">
+            <i class="fa fa-user"></i> <span style="cursor: pointer;">Niveles</span>
+            <span class="pull-right-container">
+              <i class="fa fa-angle-left pull-right" style="cursor: pointer;"></i>
+            </span>
+            
+          </a>
+        </li>
       </ul>
     </section>
     <!-- /.sidebar -->
